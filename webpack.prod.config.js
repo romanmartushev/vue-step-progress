@@ -2,7 +2,6 @@ const TerserPlugin = require('terser-webpack-plugin');
 const { VueLoaderPlugin } = require('vue-loader');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const CssMinimizerPlugin = require('css-minimizer-webpack-plugin');
-const webpack = require('webpack');
 
 module.exports = {
   mode: 'production',
@@ -64,18 +63,8 @@ module.exports = {
       }
     ],
   },
-  resolve: {
-    modules: [
-      'node_modules',
-      'vue'
-    ]
-  },
   plugins: [
     new VueLoaderPlugin(),
-    new webpack.DefinePlugin({
-      __VUE_OPTIONS_API__: false,
-      __VUE_PROD_DEVTOOLS__: true,
-    }),
     new MiniCssExtractPlugin(),
   ],
   devtool: 'source-map',
