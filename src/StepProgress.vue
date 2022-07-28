@@ -14,8 +14,7 @@
         "--passiveBorder" : passiveThickness + "px"
       }`
       :class=`{
-        "step-progress__step--active": index === currentStep,
-        "step-progress__step--valid": index < currentStep
+        "step-progress__step--active": index === currentStep
       }`
     )
       span {{ index + 1 }}
