@@ -6,6 +6,7 @@
   .step-progress__bar
     .step-progress__step(
       v-for='(step, index) in steps'
+      :key='`step-${index}`'
       :style=`{
         "--activeColor" : activeColor,
         "--passiveColor" : passiveColor,
@@ -110,7 +111,7 @@ export default {
     height: 12px
     width: 100%
     background-color: red
-    transform: scaleX(0) translateY(-50%) perspective(1000px) 
+    transform: scaleX(0) translateY(-50%) perspective(1000px)
     transform-origin: left center
     transition: transform .5s ease
 
@@ -152,11 +153,11 @@ export default {
     &--valid
       .step-progress__step-icon
         opacity: 1
-        transform: translate3d(-50%, -50%, 0) scale(1) perspective(1000px) 
+        transform: translate3d(-50%, -50%, 0) scale(1) perspective(1000px)
       span
         color: var(--activeColor)
         opacity: 0
-        transform: translate3d(0,0,0) scale(2) perspective(1000px) 
+        transform: translate3d(0,0,0) scale(2) perspective(1000px)
       .step-progress__step-label
         color: var(--activeColor)
     &:after
@@ -165,7 +166,7 @@ export default {
       z-index: -1
       left: 50%
       top: 50%
-      transform: translate(-50%, -50%) perspective(1000px) 
+      transform: translate(-50%, -50%) perspective(1000px)
       width: 75px
       height: 75px
       background-color: #fff
@@ -202,7 +203,7 @@ export default {
     top: 50%
     transition: transform .3s ease
     opacity: 0
-    transform: translate3d(-50%, -50%, 0) scale(0) perspective(1000px) 
+    transform: translate3d(-50%, -50%, 0) scale(0) perspective(1000px)
 
     @media (max-width: 767px)
       font-size: 22px
